@@ -1,0 +1,24 @@
+<header class="header">
+    <div class="container">
+        <div class="logo">
+            <h1>Coffee Haven</h1>
+        </div>
+        <nav class="nav">
+            <ul>
+                <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a></li>
+                <li><a routerLink="/about" routerLinkActive="active">About</a></li>
+                <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="search-container">
+            <input type="text" placeholder="Search coffee..." [(ngModel)]="searchTerm" (input)="onSearch()"
+                class="search-input">
+        </div>
+        <div class="selected-coffee" *ngIf="selectedCoffee()">
+            <p>
+                You selected: <strong>{{ selectedCoffee()?.name }}</strong> -
+                ${{ selectedCoffee()?.price }}
+            </p>
+        </div>
+    </div>
+</header>

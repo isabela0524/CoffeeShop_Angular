@@ -1,0 +1,10 @@
+<div class="coffee-card">
+    <img [src]="coffee.image" [alt]="coffee.name" class="coffee-image">
+    <h3>{{ coffee.name }}</h3>
+    <p class="description">{{ coffee.description }}</p>
+    <p class="price">${{ coffee.price.toFixed(2) }}</p>
+    <div class="button-row">
+        <button class="order-button" (click)="onOrderNow()">Order Now</button>
+        <button class="heart-button" [ngClass]="{'favorited': isFavorite}" (click)="toggleFavorite()">♥</button>
+    </div>
+</div>

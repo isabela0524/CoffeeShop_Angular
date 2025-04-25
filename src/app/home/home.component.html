@@ -1,0 +1,26 @@
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <h1>Discover the Perfect Cup of Coffee</h1>
+            <p>Handcrafted with love and passion for coffee lovers</p>
+            <button class="hero-button" (click)="scrollToMenu()">Explore Menu</button>
+        </div>
+    </div>
+</section>
+
+<section class="special-coffee" id="menu">
+    <div class="contaianer">
+        <h2>Our Special Coffee</h2>
+        <div class="coffee-grid">
+            <app-coffee-card *ngFor="let coffee of coffeeService.getAllCoffees()" [coffee]="coffee"
+                (orderCoffee)="onOrderCoffee($event)">
+            </app-coffee-card>
+        </div>
+    </div>
+</section>
+
+<section class="subfooter">
+    <div class="container">
+        <p>Thank you for visiting Coffee Haven. We hope you enjoy our selection!</p>
+    </div>
+</section>
